@@ -11,17 +11,20 @@ cd /d "%REPO_DIR%" || (
 
 echo Staging backup files in %REPO_DIR%...
 
-REM Ensure we have the latest history before adding our new one
+REM 1. Pull changes to prevent conflicts
 git pull --rebase
 
-REM Add all files (if any changed)
+REM 2. THE TRICK: Update a dummy file with the current time.
+REM This forces a physical file change every single time.
+echo Last backup run: %date% %time% > last_run.txt
+
+REM 3. Add all files (including the updated last_run.txt)
 git add .
 
-REM --- THE FIX ---
-REM --allow-empty forces a commit to be created even if files are identical.
-REM This ensures there is always something new to push.
-git commit --allow-empty -m "Force backup %date% %time%"
+REM 4. Commit (This will now ALWAYS succeed because last_run.txt changed)
+git commit -m "Auto backup: %date% %time%"
 
+REM 5. Push changes
 echo Pushing to GitHub...
 git push origin main
 
