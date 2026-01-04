@@ -11,12 +11,18 @@ cd /d "%REPO_DIR%" || (
 
 echo Staging backup files in %REPO_DIR%...
 
-REM Optional: keep in sync if you ever pull from elsewhere
+REM Ensure we have the latest history before adding our new one
 git pull --rebase
 
+REM Add all files (if any changed)
 git add .
-git commit -m "Auto backup %date% %time%" || echo Nothing to commit.
 
+REM --- THE FIX ---
+REM --allow-empty forces a commit to be created even if files are identical.
+REM This ensures there is always something new to push.
+git commit --allow-empty -m "Force backup %date% %time%"
+
+echo Pushing to GitHub...
 git push origin main
 
 echo.
