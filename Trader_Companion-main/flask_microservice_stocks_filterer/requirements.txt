@@ -1,3 +1,0 @@
-## Delegate to root requirements to keep a single source of truth.
-## Add microservice-only extras below this include if needed later.
--r ../requirements.txt

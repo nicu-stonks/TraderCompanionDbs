@@ -1,1 +1,0 @@
-./stocks_filtering_application\minervini_1mo/stocks_ranking_by_price.csv

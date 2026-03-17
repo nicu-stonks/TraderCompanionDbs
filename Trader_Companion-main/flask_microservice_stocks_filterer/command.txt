@@ -1,1 +1,0 @@
-python master_pipeline.py 20 --fetch-data --top-n 1000 --sleep-after
