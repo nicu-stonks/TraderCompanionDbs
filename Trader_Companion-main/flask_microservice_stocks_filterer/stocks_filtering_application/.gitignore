@@ -1,0 +1,7 @@
+/stock_api_data/*
+!/stock_api_data/.gitkeep
+
+/ranking_screens/passed_stocks_input_data/*
+!/ranking_screens/passed_stocks_input_data/.gitkeep
+/price_data/*
+/fundamental_data/*

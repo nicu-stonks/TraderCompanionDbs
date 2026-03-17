@@ -1,0 +1,38 @@
+Buy_Seller/pivot_watchers/stock_data_server_*.log
+media/post_analysis_images/*
+*.tmp.drivedownload
+*.tmp.driveupload
+djangoProject/__pycache__/__init__.cpython-313.pyc
+djangoProject/__pycache__/*
+
+# General Python cache / compiled artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment folders (if present)
+venv/
+.venv/
+
+# IDE/editor caches (optional)
+.idea/
+.vscode/
+
+# Distribution / packaging (future-proof)
+build/
+dist/
+*.egg-info/
+
+# Environment / secrets (leave commented if you want to keep tracked)
+# .env
+# .env.*
+
+# Ignore databases except specified ones
+*.sqlite3
+*.sqlite3-journal
+*.db
+!dbs/nutrients_tracker.sqlite3
+!dbs/personal_ranking.sqlite3
+!dbs/trades_db.sqlite3
+!utils/trades_db.sqlite3
